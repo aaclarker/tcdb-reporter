@@ -1,0 +1,14 @@
+{
+  "name": "tcdb-reporter",
+  "version": "0.0.1",
+  "description": "A mocha reporter that writes test results into the tcdb format",
+  "main": "TCDBReporter.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pan1cz/tcdb-reporter.git"
+  },
+  "author": {
+      "name": "Aaron Clark",
+      "email": "aaron.clark@inin.com"
+  },
+}
