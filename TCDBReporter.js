@@ -19,17 +19,10 @@ exports = module.exports = TCDBReporter;
 
 function TCDBReporter(runner, options) {
 
-  try {
-    var config = JSON.parse(fs.readFileSync("config.json"));
-  }
-  catch (err) {
-    console.log("No TCDB config provided");
-  }
-
   var testCases = []
-    , environment = process.env.TCDB_ENV || config.env.toUpperCase() || "TCA"
+    , environment = process.env.TCDB_ENV || "TCA"
     , envNumber = 0
-    , filePath = process.env.TCDB_FILE || config.tcdbFile || process.cwd() + "/tcdb.json";
+    , filePath = process.env.TCDB_FILE || process.cwd() + "/tcdb.json";
 
   switch (environment) {
     case "DCA":
