@@ -2,8 +2,7 @@
  * Module dependencies.
  */
 
-var config = require("../config.json")
-  , fs = require("fs");
+var fs = require("fs");
 
 /**
  * Expose `TCDBReporter`.
@@ -19,6 +18,13 @@ exports = module.exports = TCDBReporter;
  */
 
 function TCDBReporter(runner, options) {
+
+  try {
+    var config = JSON.parse(fs.readFileSync("config.json"));
+  }
+  catch (err) {
+    console.log("No TCDB config provided");
+  }
 
   var testCases = []
     , environment = process.env.TCDB_ENV || config.env.toUpperCase() || "TCA"
